@@ -398,10 +398,10 @@
       "KIT"
     ],
     "summary": "Repbase crocodilian SINEs and three LF-SINE queries searched in the gharial and the American alligator genomes; crocodilian arm of the LF-SINE-in-birds work.",
-    "about": "2024-01: 25 Repbase crocodilian SINE consensi searched in Gavialis gangeticus (rGavGan2 hap2) and clustered; a RepeatModeler attempt failed immediately (missing RepeatMasker module) and left 2.3 GB of leftovers. 2024-07: lfsine.q, LFSINE-rb.q and lfsine_mid.q searched in the gharial and Alligator mississippiensis (rAllMis1): 1,657 / 979 / 308 hits in the gharial, 1,788 / 1,032 / 315 in the alligator; hits clustered into 34 groups. Same queries were used on emu, kiwi and other birds the same days. No written conclusion. This is the first audited folder of the LF-SINE project, searched or planned in birds (moa), humans, sharks and relatives, lungfishes; publication-bound.",
+    "about": "2024-01: 25 Repbase crocodilian SINE consensi searched in Gavialis gangeticus (rGavGan2 hap2) and clustered; a RepeatModeler attempt failed immediately (missing RepeatMasker module) and left 2.3 GB of leftovers. 2024-07: lfsine.q, LFSINE-rb.q and lfsine_mid.q searched in the gharial and Alligator mississippiensis (rAllMis1): 1,657 / 979 / 308 hits in the gharial, 1,788 / 1,032 / 315 in the alligator; hits clustered into 34 groups. Same queries were used on emu, kiwi and other birds the same days. No written conclusion. This is the first audited folder of the LF-SINE project, searched or planned in birds (moa), humans, sharks and relatives, lungfishes.",
     "where": [
       "KIT: /data/W/toki/Crocodilia_LFSINE_2024 (was GavGan; README.md inside)",
-      "Candidate LF-SINE folders on KIT (not examined yet): moa (birds, coelacanth), Genomes/Fish/Lungfish, Genomes/lower/Chondrichthyes, hsa (humans), Lagomorpha, amphibians"
+      "Other folders of this project are listed in a private index (not published here)"
     ],
     "plan": [
       [
@@ -410,19 +410,7 @@
       ],
       [
         false,
-        "Audit moa (birds, coelacanth)"
-      ],
-      [
-        false,
-        "Audit lungfish and Chondrichthyes folders"
-      ],
-      [
-        false,
-        "Audit human and other LF-SINE folders"
-      ],
-      [
-        false,
-        "Build one traced table species x query x hits x clusters"
+        "Remaining folders: audit and reorganisation (details kept private)"
       ]
     ],
     "commands": [
@@ -433,7 +421,7 @@
     "log": [
       [
         "2026-10-05",
-        "Folder renamed Crocodilia_LFSINE_2024, rm/ (2.3 GB failed RepeatModeler) deleted, results grouped; LF-SINE master document started."
+        "Folder renamed Crocodilia_LFSINE_2024, rm/ (2.3 GB failed RepeatModeler) deleted, results grouped; project index started (private)."
       ],
       [
         "2026-10-05",
