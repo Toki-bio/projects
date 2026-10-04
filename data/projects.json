@@ -1,0 +1,97 @@
+[
+  {
+    "slug": "alsu",
+    "title": "ALSU Uzbek population genetics",
+    "status": "active",
+    "updated": "2026-10-04",
+    "tags": ["population genetics", "DRAGEN"],
+    "summary": "Array and imputed genotypes of ~1,256 Uzbek individuals: PCA, ADMIXTURE, FST, relatedness, GWAS. Currently being re-checked against a corrected reference.",
+    "about": "Population-genetics analysis of an Uzbek cohort, run on the DRAGEN server. Outputs are a public GitHub site (Toki-bio/ALSU-analysis), a Russian-language report and a slide deck. In October 2026 the PBS selection candidates were found to come from errors in the 1000G GRCh38 call set, so the analysis is being redone on the NYGC 30x reference.",
+    "where": ["Local: C:\\work\\alsu and C:\\work\\ALSU-analysis", "Site: github.com/Toki-bio/ALSU-analysis", "DRAGEN: /staging/ALSU-analysis/spring2026/full_expanded_cohort/", "Resume with the alsu-project skill"],
+    "plan": [
+      [true, "Find that the 8 Tier-1 PBS candidates are 1000G GRCh38 artefacts"],
+      [true, "Download NYGC 30x and rerun PBS: 0 candidates after overlap filtering"],
+      [true, "Recompute all ten FST pairs on NYGC; headline FST replicates"],
+      [true, "Banners and strike-throughs for withdrawn claims on the public site"],
+      [false, "gnomAD / other-chip check of the remaining unexplained sites"],
+      [false, "Rewrite report numbers (3,804 sites, K=5) and remaining deck slides (relatedness, GWAS)"],
+      [false, "Regenerate figures for the new runs; update SLIDE_NOTES_RU.md and DRAFT_SECTIONS"],
+      [false, "ADMIXTURE review points from the colleague's critique (ethnicity join, K choice)"]
+    ],
+    "log": [
+      ["2026-10-04", "All ten FST pairs recomputed on NYGC; the 10-02 pairs reproduce exactly. Found merged.fam (1,193) that had been wrongly reported as not found. Report copy and deck updated (slides 11 and 12)."],
+      ["2026-10-02", "PBS rerun on NYGC 30x: tiers 0/0/0, max PBS 0.07 after filtering overlapping indel records. GWAS sensitivity checks: nothing genome-wide significant. Corrections pushed to the public site."],
+      ["2026-10-01", "Cursor session found the Tier-1 PBS candidates are artefacts of the 1000G GRCh38 reference. Rerun without 285 discordant sites gives zero candidates."]
+    ]
+  },
+  {
+    "slug": "viewalign",
+    "title": "ViewAlign (MSA viewer)",
+    "status": "active",
+    "updated": "2026-10-04",
+    "tags": ["software", "manuscript"],
+    "summary": "Browser-based multiple sequence alignment viewer being prepared as a Bioinformatics application note. Now at v233 with a codon aligner and a BED annotation track.",
+    "about": "ViewAlign is a single-page MSA viewer and editor. Plan: bioRxiv preprint first, then Bioinformatics (OUP), which accepts direct bioRxiv transfer. Main branch is the submission snapshot; a parked branch holds unfinished Show 2D work.",
+    "where": ["Repo: C:\\work\\MSA-viewer (github.com/Toki-bio/MSA-viewer), GitHub Pages from main", "Manuscript: manuscript.md, supplementary.md, cover-letter.md in the repo", "Tests: tests/run-regression.sh and node tests/functional/run-all.js"],
+    "plan": [
+      [true, "MACSE-like frameshift-aware codon aligner on main (98.9% pair agreement on 2,636 genes)"],
+      [true, "Thorough review of v227: seven bugs fixed in v228"],
+      [true, "BED annotation track and per-gene codon analysis (v233, v234)"],
+      [false, "Corresponding author and e-mail, funding statement"],
+      [false, "Frozen release plus Zenodo DOI"],
+      [false, "One main figure; trim manuscript to about 2,000 words"],
+      [false, "Post to bioRxiv, then submit to Bioinformatics"]
+    ],
+    "log": [
+      ["2026-10-04", "v233 BED annotation track (above the ruler, canvas and DOM paths) and v234 codon analysis by gene; fixed the jerky scroll-up bug in the windowed codon renderer."],
+      ["2026-10-04", "Codon aligner on main (v227); review found seven bugs, all fixed in v228 with new unit and browser tests."],
+      ["2026-09-27", "Author block set from the Crossref record; perf pass v204."]
+    ]
+  },
+  {
+    "slug": "sicista",
+    "title": "Sicista betulina genome",
+    "status": "active",
+    "updated": "2026-10-04",
+    "tags": ["genome assembly", "SINEs", "therioserver"],
+    "summary": "ONT assembly of the northern birch mouse (primary: 2.99 Gb, N50 18.25 Mb, BUSCO 99.2%), plus mitogenome/NUMT findings and a first SINE scan.",
+    "about": "Assembly of S. betulina (individual ZBS2026-Sb1, Bannikova lab ONT, about 104 Gb) on therioserver. Collaborators: Kim Cooper (UCSD), Michael Hiller (Senckenberg, will run TOGA2), Anna Bannikova, Vladimir Lebedev. Side questions: whether extra Illumina is needed, and why PCR fails (a ~200-copy nuclear lineage-B mtDNA-like family was found).",
+    "where": ["Server: therioserver ~/Sicista2026", "Notes: C:\\work\\hylomys_ont\\SICISTA_WORKFLOW_LOG.md (section 11 first), SICISTA_MITO_FINDINGS.md, SICISTA_ASSEMBLY_QC_AND_ILLUMINA.md", "Gene BEDs and SINE cards: C:\\work\\Tal\\sicista"],
+    "plan": [
+      [true, "Evaluate the primary assembly (earlier numbers were hap1) and recommend it"],
+      [true, "Share primary assembly and raw reads with the Hiller lab"],
+      [true, "QC verdict: no extra Illumina needed on this individual (male, 35x ONT)"],
+      [true, "Mitogenome / NUMT analysis"],
+      [false, "Check the lab's actual PCR primers against the lineage-B family and the control-region repeat"],
+      [false, "Finish de novo SINE scan, Dip SINEderella, and orthologous loci vs S. trizona"],
+      [false, "More individuals for MSMC and population SINE frequencies"],
+      [false, "Request pod5 and metadata from the sequencing company"]
+    ],
+    "log": [
+      ["2026-10-04", "ONT-only PSMC and SINE-indel feasibility tests: robust above 60 ky, 25,313 heterozygous SINE-like indels on autosomes. Verdict: extra Illumina not needed on this individual."],
+      ["2026-10-03", "Mito/NUMT study: real mtDNA is circular with a 312 bp ATACGC x52 control-region repeat; nuclear genome holds a ~200-copy lineage-B-type family. Unattended SINE scan launched on both genomes."],
+      ["2026-09-29", "Audit found all earlier quoted numbers were hap1; the primary (1,144 contigs, N50 18.25 Mb, BUSCO 99.2%) is better on both metrics."]
+    ]
+  },
+  {
+    "slug": "crayfish-mito",
+    "title": "Crayfish mitogenome resubmission",
+    "status": "waiting",
+    "updated": "2026-08-09",
+    "tags": ["mitogenome", "NCBI"],
+    "summary": "Corrected mitogenome and annotation for the crayfish submission, ready for table2asn. Waiting on the manual NCBI steps.",
+    "about": "Investigation of NCBI errors on the original submission. The DRAGEN assembly was fragmented, so a local one was used. Final package: one base fixed (position 143, T to C), trnL2 added and cox1 shortened, a table parse error fixed, and a CYTB note reworded. Positions 15222 and 15224 were thinly covered and deliberately left unchanged.",
+    "where": ["C:\\work\\Raks_COI\\Assembly\\mitogenome\\", "kessleri_mito_FINAL.fa and .tbl, SUBMISSION_INSTRUCTIONS_FINAL.txt"],
+    "plan": [
+      [true, "QC of original submission and annotation"],
+      [true, "From-scratch redo and circularity fix"],
+      [true, "Final fa and tbl built"],
+      [false, "Run table2asn (needs the .sbt template and the exe)"],
+      [false, "Upload to NCBI"]
+    ],
+    "log": [
+      ["2026-08-09", "Final corrected package built; only pos 143 changed, 15222 and 15224 left as they were."],
+      ["2026-08-08", "QC found the .tbl parse bug and the missing trnL2; the DRAGEN de novo assembly was fragmented, so the local one is used."]
+    ]
+  }
+]
