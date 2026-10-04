@@ -40,6 +40,7 @@ h2 { color: #333; margin: 28px 0 14px; }
 .log .e { margin-bottom: 14px; line-height: 1.5; }
 .log .d { font-weight: 600; color: #333; margin-right: 8px; }
 p.about { line-height: 1.6; max-width: 900px; }
+pre { background: #f3f3f3; border: 1px solid #ddd; border-radius: 6px; padding: 12px; overflow-x: auto; font-size: .85em; line-height: 1.5; white-space: pre-wrap; }
 .foot { text-align: center; color: #999; font-size: .85em; padding: 20px; }
 """
 
@@ -82,11 +83,12 @@ for p in data:
     plan = "".join(f'<li class="{"done" if s[0] else ""}">{"&#9745;" if s[0] else "&#9744;"} {E(s[1])}</li>' for s in p["plan"])
     where = "".join(f"<li>{E(w)}</li>" for w in p["where"])
     log = "".join(f'<div class="e"><span class="d">{E(d)}</span>{E(t)}</div>' for d, t in p["log"])
+    cmds = ('<h2>Commands</h2><pre>' + E(chr(10).join(p['commands'])) + '</pre>') if p.get('commands') else ''
     body = f'''<a class="back" href="../index.html">&larr; All projects</a>
 <p><span class="status s-{p["status"]}">{p["status"]}</span> <span class="meta">updated {p["updated"]}</span></p>
 <h2>About</h2><p class="about">{E(p["about"])}</p>
 <h2>Plan</h2><ul class="plan">{plan}</ul>
 <h2>Where things are</h2><ul class="where">{where}</ul>
-<h2>Log</h2><div class="log">{log}</div>'''
+{cmds}<h2>Log</h2><div class="log">{log}</div>'''
     (root / "p" / f'{p["slug"]}.html').write_text(page(p["title"], p["summary"], body), encoding="utf-8")
 print("built", len(data), "projects")

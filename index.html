@@ -31,10 +31,11 @@ h2 { color: #333; margin: 28px 0 14px; }
 .log .e { margin-bottom: 14px; line-height: 1.5; }
 .log .d { font-weight: 600; color: #333; margin-right: 8px; }
 p.about { line-height: 1.6; max-width: 900px; }
+pre { background: #f3f3f3; border: 1px solid #ddd; border-radius: 6px; padding: 12px; overflow-x: auto; font-size: .85em; line-height: 1.5; white-space: pre-wrap; }
 .foot { text-align: center; color: #999; font-size: .85em; padding: 20px; }
 </style></head><body>
 <div class="container"><div class="header"><h1>Projects</h1><p>What I am working on, where it stands, and what is next</p></div>
-<div class="content"><div class="filters"><button class="active" data-f="all">All</button><button data-f="active">active</button><button data-f="waiting">waiting</button></div><div class="grid"><a class="card" href="p/alsu.html" data-status="active">
+<div class="content"><div class="filters"><button class="active" data-f="all">All</button><button data-f="active">active</button><button data-f="waiting">waiting</button><button data-f="parked">parked</button></div><div class="grid"><a class="card" href="p/alsu.html" data-status="active">
 <h3>ALSU Uzbek population genetics</h3><p>Array and imputed genotypes of ~1,256 Uzbek individuals: PCA, ADMIXTURE, FST, relatedness, GWAS. Currently being re-checked against a corrected reference.</p><div><span class="tag">population genetics</span><span class="tag">DRAGEN</span></div>
 <div class="bar"><div style="width:50%"></div></div>
 <div class="meta"><span class="status s-active">active</span><span>4/8 steps · updated 2026-10-04</span></div></a><a class="card" href="p/viewalign.html" data-status="active">
@@ -46,7 +47,10 @@ p.about { line-height: 1.6; max-width: 900px; }
 <div class="meta"><span class="status s-active">active</span><span>4/8 steps · updated 2026-10-04</span></div></a><a class="card" href="p/crayfish-mito.html" data-status="waiting">
 <h3>Crayfish mitogenome resubmission</h3><p>Corrected mitogenome and annotation for the crayfish submission, ready for table2asn. Waiting on the manual NCBI steps.</p><div><span class="tag">mitogenome</span><span class="tag">NCBI</span></div>
 <div class="bar"><div style="width:60%"></div></div>
-<div class="meta"><span class="status s-waiting">waiting</span><span>3/5 steps · updated 2026-08-09</span></div></a></div></div><div class="foot">Maintained with Claude Code from data/projects.json</div></div><script>
+<div class="meta"><span class="status s-waiting">waiting</span><span>3/5 steps · updated 2026-08-09</span></div></a><a class="card" href="p/tropiocolotes.html" data-status="parked">
+<h3>Tropiocolotes 5-locus alignments</h3><p>New Tropiocolotes sequences (12S, 16S, CYTB, MC1R, c-mos) merged with all GenBank Tropiocolotes sequences and aligned with MAFFT. Stops at alignments.</p><div><span class="tag">phylogenetics</span><span class="tag">geckos</span><span class="tag">KIT archive</span></div>
+<div class="bar"><div style="width:60%"></div></div>
+<div class="meta"><span class="status s-parked">parked</span><span>3/5 steps · updated 2025-10-11</span></div></a></div></div><div class="foot">Maintained with Claude Code from data/projects.json</div></div><script>
 document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
  document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('active',x===b));
  document.querySelectorAll('.card').forEach(c=>c.style.display=(b.dataset.f==='all'||c.dataset.status===b.dataset.f)?'':'none');});
