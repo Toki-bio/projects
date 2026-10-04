@@ -253,9 +253,8 @@
     "summary": "Supplied Tropiocolotes sequences (12S, 16S, CYTB, MC1R, c-mos) merged with a GenBank snapshot and aligned with MAFFT. Stops at alignments.",
     "about": "20 supplied samples (CN10xxx, 13-19 sequences per locus, none yet in GenBank under those IDs) were put in context with a GenBank text-query snapshot of 2025-10-11 (includes 7 Trachydactylus/Bunopus records), one alignment per locus. The 12S, 16S and CYTB alignments are about 20,500 columns wide because two complete mitogenomes (AB738944, AB661661) are in every query result; trim before any tree. CMOS and MC1R alignments were re-run on 2026-10-04 and reproduce byte for byte. No tree or other analysis exists in the folder or the shell history. Reference paper: Machado et al. 2018.",
     "where": [
-      "KIT: /data/W/toki/Tropiocolotes (22 files, 11 MB)",
-      "Verified archive and description: KIT /data/V/toki/audit_V/Tropiocolotes_2026-10-04/ (Tropiocolotes_full.tar.gz 0.27 MB, README.md, MD5SUMS_original.txt)",
-      "Local copies of the supplied sequences, paper and spreadsheet: C:\\work\\tropiocolotes"
+      "KIT: /data/W/toki/Tropiocolotes_5loci_2025-10 (21 files, 11 MB; README.md = full description, MD5SUMS.txt). Only copy of the KIT data; no other backup by decision.",
+      "Local copies of the supplied sequences, paper and spreadsheet: C:\\work\\tropiocolotes (not yet tidied)"
     ],
     "plan": [
       [
@@ -268,15 +267,15 @@
       ],
       [
         true,
-        "Audit the KIT folder, archive it (verified) and write the description"
+        "Audit every file, reorganize the KIT folder, write README"
       ],
       [
         false,
-        "Replace the KIT folder by README plus the tarball (waiting for the owner to run the cleanup)"
+        "Tidy the local copy C:\\work\\tropiocolotes after approval"
       ],
       [
         false,
-        "Trim the mitogenome-wide alignments to the locus, then build trees"
+        "Trim the mitogenome-wide alignments to the locus (or drop AB738944 and AB661661), then build trees"
       ]
     ],
     "commands": [
@@ -286,6 +285,10 @@
       "maftm 12s.all.fas   # ~/bin/maftm: same with --adjustdirection (no --nuc), then readseq to .msf"
     ],
     "log": [
+      [
+        "2026-10-04",
+        "KIT folder renamed Tropiocolotes_5loci_2025-10 and sorted into 1_supplied / 2_genbank / 3_merged / 4_aligned; redundant tropiocolotes_CMOS.fasta removed (byte-identical to its MOS record); all other files md5-identical to before. Verification archive deleted by decision."
+      ],
       [
         "2026-10-04",
         "Checked every file: merges are exact concatenations, alignments contain the input sequences, no reverse-complemented sequences, two mitogenomes explain the 20 kb width. Folder tidy-up proposed."
