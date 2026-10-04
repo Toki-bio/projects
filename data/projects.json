@@ -316,7 +316,8 @@
     "summary": "Illumina de novo assembly (SPAdes + Pilon, 1.6 Gb, N50 7.4 kb) of the Fiji banded iguana from SRR5508305, and a SINEderella scan of it that feeds the SQ2/SINEdb work.",
     "about": "Reads SRR5508305 are Brachylophus fasciatus WGS (HiSeq 2500, 31 Gb, Univ. of Lausanne). Assembly 2026-01-16, Pilon polish of scaffolds >=10 kb 2026-01-18, SINEderella scan 2026-02 with Eryx/Fiji SINE queries: Sq3X_Eryx 30,696, Sq3A_Eryx 12,382, sq2_Eryx 6,275, Heno 989 assigned copies. scaffolds500.fasta is the genome input of the SQ2/SINEdb multi-species project (symlinked from Genomes/.../Fiji, a copy is on Monsoon). An older Squam1 search in Iguana delicatissima was deleted on request. Do not move the SINEs directory.",
     "where": [
-      "KIT: /data/W/toki/Iguana (README.md in the folder has the full reconstruction)"
+      "KIT: /data/W/toki/Brachylophus_fasciatus (hub; old name Iguana kept as a symlink; README.md inside). links_to_other_runs/ points to the Fiji SINEderella run and the three SINEderella_multi runs (2026-02/03).",
+      "Monsoon: /scratch/sk4386/Genomes/Brachylophus_fasciatus (copy, not compared yet)"
     ],
     "plan": [
       [
@@ -351,6 +352,10 @@
       "SINEderella_master.sh . scaffolds500.fasta Eryx_jayakari_SINEs.fas   # 2026-02 scan"
     ],
     "log": [
+      [
+        "2026-10-05",
+        "All Brachylophus material on KIT merged into one hub folder (renamed, old path kept as symlink; other run trees linked, not moved)."
+      ],
       [
         "2026-10-04",
         "Reads identified (SRR5508305 = B. fasciatus WGS; SRR32194107 = B. bulabula capture). Piece A deleted. Found the folder's scaffolds500.fasta is symlinked into Genomes/.../Fiji and used by SQ2/SINEdb. Scan results reviewed: not disposable."
