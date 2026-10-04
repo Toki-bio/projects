@@ -302,5 +302,71 @@
         "GenBank download, merge and MAFFT alignment of all five loci."
       ]
     ]
+  },
+  {
+    "slug": "iguana-assembly",
+    "title": "Iguana: assembly and SINE scan",
+    "status": "parked",
+    "updated": "2026-02-04",
+    "tags": [
+      "genome assembly",
+      "SINEs",
+      "KIT"
+    ],
+    "summary": "Illumina de novo assembly (SPAdes + Pilon, 1.6 Gb, N50 7.4 kb) from SRR5508305 and a SINEderella scan of it; plus an older Squam1 search in Iguana delicatissima.",
+    "about": "Three pieces of work share one KIT folder: a 2024-01 Squam1 SINE search in the public I. delicatissima genome; a 2026-01 assembly from reads SRR5508305 (script comment says Brachylophus fasciatus, not checked against SRA), and a 2026-02 SINEderella scan of its scaffolds with Eryx and Fiji SINE queries. No written conclusion was found. About 160 of 224 GB are regenerable intermediates.",
+    "where": [
+      "KIT: /data/W/toki/Iguana (README.md in the folder has the full reconstruction)"
+    ],
+    "plan": [
+      [
+        true,
+        "Assemble from SRR5508305 (SPAdes), QUAST"
+      ],
+      [
+        true,
+        "Polish scaffolds >=10 kb with Pilon"
+      ],
+      [
+        true,
+        "SINEderella scan with Eryx/Fiji/heno queries"
+      ],
+      [
+        false,
+        "Reduce the folder to results (about 160 GB regenerable), awaiting approval"
+      ],
+      [
+        false,
+        "Write down what the SINE scan showed; identify SRR32194107"
+      ]
+    ],
+    "commands": [
+      "assemble_iguana.sh: fasterq-dump; fastp --cut_tail --cut_mean_quality 20 --length_required 50; jellyfish 21-mer; spades.py --only-assembler -t 46 -m 450; quast --eukaryote",
+      "seqkit seq -m 10000 scaffolds.fasta > scaffolds_10kb.fasta; bwa mem | samtools sort; pilon -Xmx200G --changes --vcf",
+      "sear2kloop darsquam1.q igu.fna 0.1 ; maftm igu-darsquam1.bnk   # 2024 Squam1 search",
+      "SINEderella_master.sh . scaffolds500.fasta Eryx_jayakari_SINEs.fas   # 2026-02 scan"
+    ],
+    "log": [
+      [
+        "2026-10-04",
+        "Folder audited and described; cleanup proposal made."
+      ],
+      [
+        "2026-02-04",
+        "SINE scan outputs written (sine_search_out, merged_loci)."
+      ],
+      [
+        "2026-01-18",
+        "Pilon polishing of scaffolds >=10 kb finished."
+      ],
+      [
+        "2026-01-16",
+        "SPAdes assembly and QUAST finished."
+      ],
+      [
+        "2024-01-04",
+        "Squam1 search in I. delicatissima."
+      ]
+    ]
   }
 ]

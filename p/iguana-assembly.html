@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iguana: assembly and SINE scan</title><style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 100%); min-height: 100vh; padding: 20px; color: #333; }
+.container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden; }
+.header { background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%); color: white; padding: 40px 30px; text-align: center; }
+.header h1 { font-size: 2.5em; margin-bottom: 10px; }
+.header p { font-size: 1.1em; opacity: 0.95; }
+.content { padding: 40px 30px; }
+h2 { color: #333; margin: 28px 0 14px; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.filters button { border: 1px solid #ccc; background: #f5f5f5; padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: .95em; color: #555; }
+.filters button.active { background: #333; color: white; border-color: #333; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+.card { display: flex; flex-direction: column; background: #f9f9f9; border: 1px solid #ddd; border-left: 5px solid #333; border-radius: 8px; padding: 20px; text-decoration: none; color: inherit; transition: box-shadow .2s, transform .2s; }
+.card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.15); transform: translateY(-2px); }
+.card h3 { color: #222; margin-bottom: 8px; font-size: 1.2em; }
+.card p { color: #555; line-height: 1.5; font-size: .95em; flex: 1; }
+.meta { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: .85em; color: #777; }
+.tag { display: inline-block; background: #e8e8e8; color: #555; border-radius: 10px; padding: 2px 9px; font-size: .8em; margin: 8px 4px 0 0; }
+.status { display: inline-block; border-radius: 10px; padding: 2px 10px; font-size: .8em; font-weight: 600; color: white; }
+.s-active { background: #2e7d32; } .s-waiting { background: #b26a00; } .s-parked { background: #777; } .s-done { background: #1565c0; }
+.bar { height: 6px; background: #ddd; border-radius: 3px; margin-top: 12px; overflow: hidden; }
+.bar > div { height: 100%; background: #333; }
+.back { display: inline-block; margin-bottom: 20px; color: #555; text-decoration: none; }
+.back:hover { color: #000; }
+.plan li, .where li { list-style: none; padding: 6px 0; line-height: 1.5; }
+.plan li.done { color: #888; text-decoration: line-through; }
+.log { border-left: 3px solid #ddd; padding-left: 18px; }
+.log .e { margin-bottom: 14px; line-height: 1.5; }
+.log .d { font-weight: 600; color: #333; margin-right: 8px; }
+p.about { line-height: 1.6; max-width: 900px; }
+pre { background: #f3f3f3; border: 1px solid #ddd; border-radius: 6px; padding: 12px; overflow-x: auto; font-size: .85em; line-height: 1.5; white-space: pre-wrap; }
+.foot { text-align: center; color: #999; font-size: .85em; padding: 20px; }
+</style></head><body>
+<div class="container"><div class="header"><h1>Iguana: assembly and SINE scan</h1><p>Illumina de novo assembly (SPAdes + Pilon, 1.6 Gb, N50 7.4 kb) from SRR5508305 and a SINEderella scan of it; plus an older Squam1 search in Iguana delicatissima.</p></div>
+<div class="content"><a class="back" href="../index.html">&larr; All projects</a>
+<p><span class="status s-parked">parked</span> <span class="meta">updated 2026-02-04</span></p>
+<h2>About</h2><p class="about">Three pieces of work share one KIT folder: a 2024-01 Squam1 SINE search in the public I. delicatissima genome; a 2026-01 assembly from reads SRR5508305 (script comment says Brachylophus fasciatus, not checked against SRA), and a 2026-02 SINEderella scan of its scaffolds with Eryx and Fiji SINE queries. No written conclusion was found. About 160 of 224 GB are regenerable intermediates.</p>
+<h2>Plan</h2><ul class="plan"><li class="done">&#9745; Assemble from SRR5508305 (SPAdes), QUAST</li><li class="done">&#9745; Polish scaffolds &gt;=10 kb with Pilon</li><li class="done">&#9745; SINEderella scan with Eryx/Fiji/heno queries</li><li class="">&#9744; Reduce the folder to results (about 160 GB regenerable), awaiting approval</li><li class="">&#9744; Write down what the SINE scan showed; identify SRR32194107</li></ul>
+<h2>Where things are</h2><ul class="where"><li>KIT: /data/W/toki/Iguana (README.md in the folder has the full reconstruction)</li></ul>
+<h2>Commands</h2><pre>assemble_iguana.sh: fasterq-dump; fastp --cut_tail --cut_mean_quality 20 --length_required 50; jellyfish 21-mer; spades.py --only-assembler -t 46 -m 450; quast --eukaryote
+seqkit seq -m 10000 scaffolds.fasta &gt; scaffolds_10kb.fasta; bwa mem | samtools sort; pilon -Xmx200G --changes --vcf
+sear2kloop darsquam1.q igu.fna 0.1 ; maftm igu-darsquam1.bnk   # 2024 Squam1 search
+SINEderella_master.sh . scaffolds500.fasta Eryx_jayakari_SINEs.fas   # 2026-02 scan</pre><h2>Log</h2><div class="log"><div class="e"><span class="d">2026-10-04</span>Folder audited and described; cleanup proposal made.</div><div class="e"><span class="d">2026-02-04</span>SINE scan outputs written (sine_search_out, merged_loci).</div><div class="e"><span class="d">2026-01-18</span>Pilon polishing of scaffolds &gt;=10 kb finished.</div><div class="e"><span class="d">2026-01-16</span>SPAdes assembly and QUAST finished.</div><div class="e"><span class="d">2024-01-04</span>Squam1 search in I. delicatissima.</div></div></div><div class="foot">Maintained with Claude Code from data/projects.json</div></div></body></html>
