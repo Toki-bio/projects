@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crocodilian SINEs (GavGan)</title><style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 100%); min-height: 100vh; padding: 20px; color: #333; }
+.container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden; }
+.header { background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%); color: white; padding: 40px 30px; text-align: center; }
+.header h1 { font-size: 2.5em; margin-bottom: 10px; }
+.header p { font-size: 1.1em; opacity: 0.95; }
+.content { padding: 40px 30px; }
+h2 { color: #333; margin: 28px 0 14px; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.filters button { border: 1px solid #ccc; background: #f5f5f5; padding: 6px 16px; border-radius: 20px; cursor: pointer; font-size: .95em; color: #555; }
+.filters button.active { background: #333; color: white; border-color: #333; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+.card { display: flex; flex-direction: column; background: #f9f9f9; border: 1px solid #ddd; border-left: 5px solid #333; border-radius: 8px; padding: 20px; text-decoration: none; color: inherit; transition: box-shadow .2s, transform .2s; }
+.card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.15); transform: translateY(-2px); }
+.card h3 { color: #222; margin-bottom: 8px; font-size: 1.2em; }
+.card p { color: #555; line-height: 1.5; font-size: .95em; flex: 1; }
+.meta { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: .85em; color: #777; }
+.tag { display: inline-block; background: #e8e8e8; color: #555; border-radius: 10px; padding: 2px 9px; font-size: .8em; margin: 8px 4px 0 0; }
+.status { display: inline-block; border-radius: 10px; padding: 2px 10px; font-size: .8em; font-weight: 600; color: white; }
+.s-active { background: #2e7d32; } .s-waiting { background: #b26a00; } .s-parked { background: #777; } .s-done { background: #1565c0; }
+.bar { height: 6px; background: #ddd; border-radius: 3px; margin-top: 12px; overflow: hidden; }
+.bar > div { height: 100%; background: #333; }
+.back { display: inline-block; margin-bottom: 20px; color: #555; text-decoration: none; }
+.back:hover { color: #000; }
+.plan li, .where li { list-style: none; padding: 6px 0; line-height: 1.5; }
+.plan li.done { color: #888; text-decoration: line-through; }
+.log { border-left: 3px solid #ddd; padding-left: 18px; }
+.log .e { margin-bottom: 14px; line-height: 1.5; }
+.log .d { font-weight: 600; color: #333; margin-right: 8px; }
+p.about { line-height: 1.6; max-width: 900px; }
+pre { background: #f3f3f3; border: 1px solid #ddd; border-radius: 6px; padding: 12px; overflow-x: auto; font-size: .85em; line-height: 1.5; white-space: pre-wrap; }
+.foot { text-align: center; color: #999; font-size: .85em; padding: 20px; }
+</style></head><body>
+<div class="container"><div class="header"><h1>Crocodilian SINEs (GavGan)</h1><p>Repbase crocodilian SINEs and three LF-SINE queries searched in the gharial and the American alligator genomes; crocodilian arm of the LF-SINE-in-birds work.</p></div>
+<div class="content"><a class="back" href="../index.html">&larr; All projects</a>
+<p><span class="status s-parked">parked</span> <span class="meta">updated 2024-07-19</span></p>
+<h2>About</h2><p class="about">2024-01: 25 Repbase crocodilian SINE consensi searched in Gavialis gangeticus (rGavGan2 hap2) and clustered; a RepeatModeler attempt failed immediately (missing RepeatMasker module) and left 2.3 GB of leftovers. 2024-07: lfsine.q, LFSINE-rb.q and lfsine_mid.q searched in the gharial and Alligator mississippiensis (rAllMis1): 1,657 / 979 / 308 hits in the gharial, 1,788 / 1,032 / 315 in the alligator; hits clustered into 34 groups. Same queries were used on emu, kiwi and other birds the same days. No written conclusion.</p>
+<h2>Plan</h2><ul class="plan"><li class="done">&#9745; Search Repbase crocodilian SINEs in the gharial genome</li><li class="done">&#9745; Search LF-SINE queries in gharial and alligator, cluster hits</li><li class="">&#9744; Clean the folder (remove failed RepeatModeler leftovers and public genome copies), awaiting approval</li><li class="">&#9744; Compare with the bird LF-SINE results (moa) and write the conclusion</li></ul>
+<h2>Where things are</h2><ul class="where"><li>KIT: /data/W/toki/GavGan (README.md inside; results about 115 MB, public genomes 3.1 GB, rm/ 2.3 GB leftovers)</li><li>Related: KIT /data/W/toki/moa (LF-SINE in birds)</li></ul>
+<h2>Commands</h2><pre>sear2kloop LFSINE-rb.q GCA_030020295.1_rGavGan2.hap2_genomic.fna   # also lfsine.q, lfsine_mid.q; same for GCF_030867095.1_rAllMis1_genomic.fna
+SubFam GCA_030020295.1_rGavGan2.hap2_genomic-lfsine.bnk ; maft ...clw   # cluster hits into groups
+seqkit grep -n -r -p &quot;Croc|Allig&quot; RepBase.bnk &gt; croc ; seqkit grep -n -r -p SINE croc &gt; crocSINE.repbase</pre><h2>Log</h2><div class="log"><div class="e"><span class="d">2026-10-05</span>Folder audited and described.</div><div class="e"><span class="d">2024-07-19</span>LF-SINE searches in gharial and alligator, 34 hit clusters.</div><div class="e"><span class="d">2024-01-04</span>Repbase crocodilian SINEs searched in the gharial genome.</div></div></div><div class="foot">Maintained with Claude Code from data/projects.json</div></div></body></html>

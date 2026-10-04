@@ -385,5 +385,59 @@
         "Squam1 search in I. delicatissima."
       ]
     ]
+  },
+  {
+    "slug": "gavgan-lfsine",
+    "title": "Crocodilian SINEs (GavGan)",
+    "status": "parked",
+    "updated": "2024-07-19",
+    "tags": [
+      "SINEs",
+      "LF-SINE",
+      "KIT"
+    ],
+    "summary": "Repbase crocodilian SINEs and three LF-SINE queries searched in the gharial and the American alligator genomes; crocodilian arm of the LF-SINE-in-birds work.",
+    "about": "2024-01: 25 Repbase crocodilian SINE consensi searched in Gavialis gangeticus (rGavGan2 hap2) and clustered; a RepeatModeler attempt failed immediately (missing RepeatMasker module) and left 2.3 GB of leftovers. 2024-07: lfsine.q, LFSINE-rb.q and lfsine_mid.q searched in the gharial and Alligator mississippiensis (rAllMis1): 1,657 / 979 / 308 hits in the gharial, 1,788 / 1,032 / 315 in the alligator; hits clustered into 34 groups. Same queries were used on emu, kiwi and other birds the same days. No written conclusion.",
+    "where": [
+      "KIT: /data/W/toki/GavGan (README.md inside; results about 115 MB, public genomes 3.1 GB, rm/ 2.3 GB leftovers)",
+      "Related: KIT /data/W/toki/moa (LF-SINE in birds)"
+    ],
+    "plan": [
+      [
+        true,
+        "Search Repbase crocodilian SINEs in the gharial genome"
+      ],
+      [
+        true,
+        "Search LF-SINE queries in gharial and alligator, cluster hits"
+      ],
+      [
+        false,
+        "Clean the folder (remove failed RepeatModeler leftovers and public genome copies), awaiting approval"
+      ],
+      [
+        false,
+        "Compare with the bird LF-SINE results (moa) and write the conclusion"
+      ]
+    ],
+    "commands": [
+      "sear2kloop LFSINE-rb.q GCA_030020295.1_rGavGan2.hap2_genomic.fna   # also lfsine.q, lfsine_mid.q; same for GCF_030867095.1_rAllMis1_genomic.fna",
+      "SubFam GCA_030020295.1_rGavGan2.hap2_genomic-lfsine.bnk ; maft ...clw   # cluster hits into groups",
+      "seqkit grep -n -r -p \"Croc|Allig\" RepBase.bnk > croc ; seqkit grep -n -r -p SINE croc > crocSINE.repbase"
+    ],
+    "log": [
+      [
+        "2026-10-05",
+        "Folder audited and described."
+      ],
+      [
+        "2024-07-19",
+        "LF-SINE searches in gharial and alligator, 34 hit clusters."
+      ],
+      [
+        "2024-01-04",
+        "Repbase crocodilian SINEs searched in the gharial genome."
+      ]
+    ]
   }
 ]
