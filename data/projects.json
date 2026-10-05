@@ -482,7 +482,8 @@
       {
         "heading": "Hit counts, same query only",
         "text": [
-          "A. Query LFSINE-rb.q (2024): comparable among themselves."
+          "A. Query LFSINE-rb.q (2024): comparable among themselves.",
+          "A2. Query LFSINE.q (2024), the same orthology run: coelacanth 132,933 hits, older coelacanth assembly 128,061, Neoceratodus 6,303; human hg17 151; pangolin 4."
         ],
         "table": {
           "head": [
@@ -532,7 +533,8 @@
       {
         "heading": "Hit counts with the 2025 consensus lfsine.cons",
         "text": [
-          "B. Query lfsine.cons, sear2k with permissive thresholds (2025): comparable among themselves."
+          "B. Query lfsine.cons, sear2k with permissive thresholds (2025): comparable among themselves.",
+          "A machine-generated inventory of 166 hit files (query guessed from file names, line counts, paths) is kept in the hub and confirms these counts."
         ],
         "table": {
           "head": [
@@ -543,6 +545,10 @@
             [
               "Crocodilia",
               "gharial 23,628 (the 2024 query lfsine.q found 1,657)"
+            ],
+            [
+              "Human",
+              "T2T-CHM13 664 (RepeatMasker annotates 2,239 LFSINE_Vert copies)"
             ],
             [
               "Acipenseriformes",
