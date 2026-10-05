@@ -32,11 +32,23 @@ h2 { color: #333; margin: 28px 0 14px; }
 .log .d { font-weight: 600; color: #333; margin-right: 8px; }
 p.about { line-height: 1.6; max-width: 900px; }
 pre { background: #f3f3f3; border: 1px solid #ddd; border-radius: 6px; padding: 12px; overflow-x: auto; font-size: .85em; line-height: 1.5; white-space: pre-wrap; }
+.sec { margin-top: 8px; }
+.sec p { line-height: 1.6; max-width: 1000px; margin: 8px 0; }
+.sec ul { margin: 8px 0 8px 22px; line-height: 1.6; max-width: 1000px; }
+table.tbl { border-collapse: collapse; margin: 12px 0 18px; font-size: .9em; width: 100%; max-width: 1100px; }
+table.tbl th { background: #333; color: white; text-align: left; padding: 7px 10px; }
+table.tbl td { padding: 6px 10px; border-bottom: 1px solid #e3e3e3; vertical-align: top; }
+table.tbl tr:nth-child(even) td { background: #f7f7f7; }
+.note { background: #fff8e1; border-left: 4px solid #e0a800; padding: 10px 14px; margin: 12px 0; max-width: 1000px; line-height: 1.5; }
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
+.toc a { font-size: .85em; background: #eee; color: #444; border-radius: 12px; padding: 3px 12px; text-decoration: none; }
+.toc a:hover { background: #333; color: white; }
+.badge { display: inline-block; border-radius: 10px; padding: 2px 10px; font-size: .8em; font-weight: 600; background: #b71c1c; color: white; margin-left: 6px; }
 .foot { text-align: center; color: #999; font-size: .85em; padding: 20px; }
 </style></head><body>
 <div class="container"><div class="header"><h1>Crayfish mitogenome resubmission</h1><p>Corrected mitogenome and annotation for the crayfish submission, ready for table2asn. Waiting on the manual NCBI steps.</p></div>
 <div class="content"><a class="back" href="../index.html">&larr; All projects</a>
-<p><span class="status s-waiting">waiting</span> <span class="meta">updated 2026-08-09</span></p>
+<p><span class="status s-waiting">waiting</span> <span class="meta">updated 2026-08-09</span></p><div class="toc"></div>
 <h2>About</h2><p class="about">Investigation of NCBI errors on the original submission. The DRAGEN assembly was fragmented, so a local one was used. Final package: one base fixed (position 143, T to C), trnL2 added and cox1 shortened, a table parse error fixed, and a CYTB note reworded. Positions 15222 and 15224 were thinly covered and deliberately left unchanged.</p>
 <h2>Plan</h2><ul class="plan"><li class="done">&#9745; QC of original submission and annotation</li><li class="done">&#9745; From-scratch redo and circularity fix</li><li class="done">&#9745; Final fa and tbl built</li><li class="">&#9744; Run table2asn (needs the .sbt template and the exe)</li><li class="">&#9744; Upload to NCBI</li></ul>
 <h2>Where things are</h2><ul class="where"><li>C:\work\Raks_COI\Assembly\mitogenome\</li><li>kessleri_mito_FINAL.fa and .tbl, SUBMISSION_INSTRUCTIONS_FINAL.txt</li></ul>

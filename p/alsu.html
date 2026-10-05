@@ -32,11 +32,23 @@ h2 { color: #333; margin: 28px 0 14px; }
 .log .d { font-weight: 600; color: #333; margin-right: 8px; }
 p.about { line-height: 1.6; max-width: 900px; }
 pre { background: #f3f3f3; border: 1px solid #ddd; border-radius: 6px; padding: 12px; overflow-x: auto; font-size: .85em; line-height: 1.5; white-space: pre-wrap; }
+.sec { margin-top: 8px; }
+.sec p { line-height: 1.6; max-width: 1000px; margin: 8px 0; }
+.sec ul { margin: 8px 0 8px 22px; line-height: 1.6; max-width: 1000px; }
+table.tbl { border-collapse: collapse; margin: 12px 0 18px; font-size: .9em; width: 100%; max-width: 1100px; }
+table.tbl th { background: #333; color: white; text-align: left; padding: 7px 10px; }
+table.tbl td { padding: 6px 10px; border-bottom: 1px solid #e3e3e3; vertical-align: top; }
+table.tbl tr:nth-child(even) td { background: #f7f7f7; }
+.note { background: #fff8e1; border-left: 4px solid #e0a800; padding: 10px 14px; margin: 12px 0; max-width: 1000px; line-height: 1.5; }
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
+.toc a { font-size: .85em; background: #eee; color: #444; border-radius: 12px; padding: 3px 12px; text-decoration: none; }
+.toc a:hover { background: #333; color: white; }
+.badge { display: inline-block; border-radius: 10px; padding: 2px 10px; font-size: .8em; font-weight: 600; background: #b71c1c; color: white; margin-left: 6px; }
 .foot { text-align: center; color: #999; font-size: .85em; padding: 20px; }
 </style></head><body>
 <div class="container"><div class="header"><h1>ALSU Uzbek population genetics</h1><p>Array and imputed genotypes of ~1,256 Uzbek individuals: PCA, ADMIXTURE, FST, relatedness, GWAS. Currently being re-checked against a corrected reference.</p></div>
 <div class="content"><a class="back" href="../index.html">&larr; All projects</a>
-<p><span class="status s-active">active</span> <span class="meta">updated 2026-10-04</span></p>
+<p><span class="status s-active">active</span> <span class="meta">updated 2026-10-04</span></p><div class="toc"></div>
 <h2>About</h2><p class="about">Population-genetics analysis of an Uzbek cohort, run on the DRAGEN server. Outputs are a public GitHub site (Toki-bio/ALSU-analysis), a Russian-language report and a slide deck. In October 2026 the PBS selection candidates were found to come from errors in the 1000G GRCh38 call set, so the analysis is being redone on the NYGC 30x reference.</p>
 <h2>Plan</h2><ul class="plan"><li class="done">&#9745; Find that the 8 Tier-1 PBS candidates are 1000G GRCh38 artefacts</li><li class="done">&#9745; Download NYGC 30x and rerun PBS: 0 candidates after overlap filtering</li><li class="done">&#9745; Recompute all ten FST pairs on NYGC; headline FST replicates</li><li class="done">&#9745; Banners and strike-throughs for withdrawn claims on the public site</li><li class="">&#9744; gnomAD / other-chip check of the remaining unexplained sites</li><li class="">&#9744; Rewrite report numbers (3,804 sites, K=5) and remaining deck slides (relatedness, GWAS)</li><li class="">&#9744; Regenerate figures for the new runs; update SLIDE_NOTES_RU.md and DRAFT_SECTIONS</li><li class="">&#9744; ADMIXTURE review points from the colleague&#x27;s critique (ethnicity join, K choice)</li></ul>
 <h2>Where things are</h2><ul class="where"><li>Local: C:\work\alsu and C:\work\ALSU-analysis</li><li>Site: github.com/Toki-bio/ALSU-analysis</li><li>DRAGEN: /staging/ALSU-analysis/spring2026/full_expanded_cohort/</li><li>Resume with the alsu-project skill</li></ul>

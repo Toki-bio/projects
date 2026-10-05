@@ -387,53 +387,343 @@
     ]
   },
   {
-    "slug": "gavgan-lfsine",
-    "title": "LF-SINE project: crocodilians (first folder)",
+    "slug": "lfsine",
+    "title": "LF-SINE project",
     "status": "active",
+    "priority": "high",
     "updated": "2026-10-05",
     "tags": [
       "LF-SINE",
       "SINEs",
-      "crocodilians",
+      "vertebrates",
+      "coelacanth",
+      "lungfish",
+      "sharks",
       "KIT"
     ],
-    "summary": "Repbase crocodilian SINEs and three LF-SINE queries searched in the gharial and the American alligator genomes; crocodilian arm of the LF-SINE-in-birds work.",
-    "about": "2024-01: 25 Repbase crocodilian SINE consensi searched in Gavialis gangeticus (rGavGan2 hap2) and clustered; a RepeatModeler attempt failed immediately (missing RepeatMasker module) and left 2.3 GB of leftovers. 2024-07: lfsine.q, LFSINE-rb.q and lfsine_mid.q searched in the gharial and Alligator mississippiensis (rAllMis1): 1,657 / 979 / 308 hits in the gharial, 1,788 / 1,032 / 315 in the alligator; hits clustered into 34 groups. Same queries were used on emu, kiwi and other birds the same days. No written conclusion. This is the first audited folder of the LF-SINE project, searched or planned in birds (moa), humans, sharks and relatives, lungfishes.",
+    "summary": "Distribution and evolution of the LF-SINE family across vertebrates: coelacanth, lungfishes, cartilaginous and ray-finned fishes, amphibians, birds, crocodilians and human. Audit of about 1 TB of runs on KIT, query lineage reconstructed, hub and cleanup in progress.",
+    "about": "LF-SINE (SINEbase entry LF, Bejerano 2006; Repbase LFSINE_Vert from Latimeria) was searched with a series of consensus queries in several dozen vertebrate and invertebrate genomes between July 2024 and March 2025. This card collects what the files on KIT show: where each query came from, how many hits each genome gives with the same query, what the orthology runs found, which earlier statements had to be corrected, and where the data are. Counts are lines of search hit files, not curated copy numbers; only counts made with the same query and thresholds are comparable.",
     "where": [
-      "KIT: /data/W/toki/Crocodilia_LFSINE_2024 (was GavGan; README.md inside)",
-      "Other folders of this project are listed in a private index (not published here)"
+      "KIT hub: /data/W/toki/LFSINE/ (queries, symlinks to every folder, summary, notes). Masters of the documents on the owner's PC: C:\\work\\LFSINE_PROJECT.md, LFSINE_SUMMARY_TABLE.md, LFSINE_REORGANIZATION_PROPOSAL.md",
+      "Main data folders on KIT: moa/unp (birds, coelacanth), Genomes/Fish/{Lungfish,Teleostomi}, Genomes/lower/{Chondrichthyes,Styelidae,Lanceolates,Nematostella}, Genomes/Amphibia, Genomes/Aves, Genomes/Reptiles/Crocodilia, hsa, Crocodilia_LFSINE_2024",
+      "Not part of the project although the names match: Lagomorpha, Squamata, Tal/orth, GekkoSINE (their *.lfSINE files are SINE_orth_loc flank classes)"
+    ],
+    "sections": [
+      {
+        "heading": "Queries and their lineage",
+        "text": [
+          "Every query was traced from files, ssearch36 identities and the dated shell history. The 2025 runs all use lfsine.cons."
+        ],
+        "table": {
+          "head": [
+            "Query",
+            "Length",
+            "Date",
+            "Origin (verified unless marked)"
+          ],
+          "rows": [
+            [
+              "SINEbase LF [Bejerano 2006]",
+              "100 nt",
+              "2024-07-17",
+              "lamprey entry of SINEbase; searched in emu (389 hits)"
+            ],
+            [
+              "lfsine.q",
+              "188 nt",
+              "2024-07-18",
+              "consensus of those emu hits (renamed from cons.q); best Repbase hits LFSINE_Vert and LFSINE_AMi"
+            ],
+            [
+              "LFSINE-rb.q",
+              "481 nt",
+              "2024-07-19",
+              "Repbase LFSINE_Vert, Latimeria menadoensis"
+            ],
+            [
+              "lfsine_mid.q",
+              "193 nt",
+              "2024-07-19",
+              "middle part (derived)"
+            ],
+            [
+              "LFSINE.q",
+              "455 nt",
+              "2024-08-02",
+              "Bejerano-based human consensus; 95% identical to the SINEbase LF entry"
+            ],
+            [
+              "lf.q (LFSINEc)",
+              "450 nt",
+              "2024-12-14",
+              "96.4% identical to LFSINE.q; first run in human T2T"
+            ],
+            [
+              "lfsine.cons (lfsine_all)",
+              "447 nt",
+              "2024-12-16",
+              "99.55% identical to lf.q; built from the top and tail copies of RepeatMasker's LFSINE annotation of CHM13; query of all 2025 runs"
+            ],
+            [
+              "chim.q",
+              "466 nt",
+              "2025-01-30",
+              "from low-scoring hits of the ray-derived query in Callorhinchus (reading of the history); 69% identical to lfsine.cons over 432 bp"
+            ],
+            [
+              "fish.q",
+              "305 nt",
+              "2025-02-07",
+              "most likely the consensus of the top chim hits in the sterlet (from timing); 91% identical to lfsine.cons over 300 bp"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Hit counts, same query only",
+        "text": [
+          "A. Query LFSINE-rb.q (2024): comparable among themselves."
+        ],
+        "table": {
+          "head": [
+            "Species",
+            "Hits"
+          ],
+          "rows": [
+            [
+              "Latimeria chalumnae (genome)",
+              "114,793"
+            ],
+            [
+              "Neoceratodus forsteri (lungfish)",
+              "5,183"
+            ],
+            [
+              "Lepidosiren paradoxa (lungfish)",
+              "15"
+            ],
+            [
+              "Protopterus annectens (lungfish)",
+              "0"
+            ],
+            [
+              "Polypterus bichir",
+              "1"
+            ],
+            [
+              "Human T2T-CHM13",
+              "10 (RepeatMasker annotates 2,239 LFSINE_Vert copies)"
+            ],
+            [
+              "Chicken GRCg7b",
+              "29"
+            ],
+            [
+              "Gharial / alligator",
+              "308 / 315"
+            ],
+            [
+              "Takifugu / Xenopus laevis",
+              "0 / 1"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Hit counts with the 2025 consensus lfsine.cons",
+        "text": [
+          "B. Query lfsine.cons, sear2k with permissive thresholds (2025): comparable among themselves."
+        ],
+        "table": {
+          "head": [
+            "Group",
+            "Species and hits"
+          ],
+          "rows": [
+            [
+              "Crocodilia",
+              "gharial 23,628 (the 2024 query lfsine.q found 1,657)"
+            ],
+            [
+              "Acipenseriformes",
+              "beluga 6,247; sterlet 5,927; paddlefish 4,202"
+            ],
+            [
+              "Other ray-finned fishes",
+              "Amia 571; Atractosteus 349; Lepisosteus 344; Polypterus senegalus 97; Erpetoichthys 96; Danio 23; Arapaima, Salmo, others none"
+            ],
+            [
+              "Amphibia",
+              "axolotl 2,670; Geotrypetes 1,940; Pelobates fuscus 334 (RepeatMasker 552); Bombina 4 (older query)"
+            ],
+            [
+              "Cartilaginous fishes",
+              "Hydrolagus affinis 723; Heptranchias 245; Hypanus 137; Mobula 139; Narcine 130; Callorhinchus 9"
+            ],
+            [
+              "Invertebrate controls",
+              "amphioxus 8; Styela clava 2; Nematostella 2"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Derived queries in cartilaginous and ray-finned fishes",
+        "text": [
+          "chim.q finds far more than lfsine.cons in cartilaginous fishes: sharks 2,510 (whale shark) to 224,693 (Squalus acanthias), Pristiophorus 182,188, Heptranchias 151,191, white shark 100,399; chimaeras 12,900-17,117; rays 2,779-4,932; sawfish 11,645.",
+          "fish.q finds 3,108 hits in the sterlet and 2,293 in the paddlefish. The previously known shark and chimaera SINEs (CM-1, HE1, SacSINE1) show no similarity to lfsine.cons (E > 0.07)."
+        ]
+      },
+      {
+        "heading": "Birds: dnaPipeTE and searches",
+        "text": [
+          "In the dnaPipeTE repeat tables (annotated components of 200 bp or more) LF-SINE accounts for 0.616% of annotated reads in moa (102 SINE-sized components), 0.015% in emu, 0.005% in kiwi, 0.002% in tinamou, and none in ostrich and chicken. The files of the five other species are filtered differently from the moa file; the comparison was redone on equal footing and the enrichment holds. Sequencing depth per species cannot be checked from the files.",
+          "Searches with lfsine.q in 2024: emu assemblies 392-526 hits, cassowary 495, rhea 390, kiwi 372, golden eagle 406, buzzard 401, tinamou 220, chicken 216."
+        ]
+      },
+      {
+        "heading": "Orthology: lungfish against coelacanth",
+        "text": [
+          "The SINE_orth_loc run Neoceratodus against Latimeria (LFSINE.q) could anchor only 8 loci out of about 15,000 candidates (14,127 failed on the left flank). Six of the eight 'shared' loci are the coelacanth against its own unplaced scaffolds (assembly duplicates), so the number of shared lungfish-coelacanth loci is zero. The two real pairs show a full-length LF-SINE in the coelacanth at an orthologous site where the lungfish has none. The control run, two coelacanth assemblies against each other, shares 115,789 loci (113 differences)."
+        ],
+        "note": "No orthology-based evidence for a shared insertion between lungfish and coelacanth was found. With the same query LFSINE-rb.q the coelacanth has 114,793 hits and the Australian lungfish 5,183, the other two lungfishes 15 and 0."
+      },
+      {
+        "heading": "Corrections made during the audit",
+        "bullets": [
+          "ZJU2.0 is the emu genome, not chicken; 'penguin' was Rhea pennata; the RepeatMasker comparison was done in emu.",
+          "The path search 'lfsine' also matched 59,147 SINE_orth_loc result files (*.lfSINE): Lagomorpha, Squamata, Tal and GekkoSINE are not LF-SINE folders.",
+          "A '4,173-hit cluster' in the beluga flank clustering was an artifact of counting blank separator lines; the real largest cluster has 282 hits.",
+          "The 6 'shared' orthologous loci of the lungfish run are coelacanth against coelacanth.",
+          "Counts made with different queries (lfsine.q, LFSINE-rb.q, lfsine.cons) were being compared; the tables now separate them.",
+          "In the desman assemblies LFSINE-rb.q gives about 3,400 short partial hits (66% identity over about 114 bp to lfsine.cons): probably another tRNA-derived SINE, not evidence for LF-SINE."
+        ]
+      },
+      {
+        "heading": "Data, hub and cleanup status",
+        "text": [
+          "About 1.0 TB in the LF-SINE trees of KIT /data/W (results 308 GB in 1.33 M files; rebuildable 2-kb window temporaries, BWA indexes and uncompressed genome copies about 0.7-0.8 TB; genome archives 88 GB, kept).",
+          "Hub /data/W/toki/LFSINE/ created: 20 query copies with md5, 56 symlinks to the real folders, orthology and tool links, summary and notes. Nothing was moved."
+        ],
+        "table": {
+          "head": [
+            "Step",
+            "State"
+          ],
+          "rows": [
+            [
+              "2-kb window temporaries (249 files, 314.4 GB)",
+              "removed by the owner; hit files, links and counts verified afterwards; /data/W free space 509 GB to 801 GB"
+            ],
+            [
+              "BWA indexes (13 files, 72.6 GB), verified duplicate genomes, lungfish banks, orthology banks (nfo-lat.bnk and two la2-lat.bnk, exact concatenations, 49.5 GB)",
+              "script ready with dry-run, verify and delete modes; waits for the owner"
+            ],
+            [
+              "Lissotriton and Bombina public genomes",
+              "re-downloading as .fna.gz with md5 check, then the uncompressed copies can go"
+            ],
+            [
+              "Small-file swarms (Chondrichthyes 524k, Crocodilia/problem 140k, colacanth/work 240k files)",
+              "to be packed one tarball per run after the owner's decision"
+            ]
+          ]
+        }
+      },
+      {
+        "heading": "Open questions",
+        "bullets": [
+          "Run lfsine.cons with identical thresholds in the coelacanth, lungfishes and birds so that all taxa can be put in one table (needs a toy test first; heavy).",
+          "Origins not found in the history: fish.q (inferred), lfsineRay.q (file not located), lfsine_head.q (purpose), the 5' head test in chicken.",
+          "Not yet read: contents of the Geotrypetes, axolotl and Pelobates run folders, the 14,127 badLF files, per-window bird consensus files, sturgeon and paddlefish alignment blocks.",
+          "Sequencing depth for the dnaPipeTE comparison (original logs are not on KIT)."
+        ]
+      }
     ],
     "plan": [
       [
         true,
-        "Crocodilia folder audited and tidied (queries, gharial, alligator, Repbase SINEs)"
+        "Audit of all LF-SINE folders found by name on KIT at structure and shell-history level"
+      ],
+      [
+        true,
+        "Query lineage reconstructed and verified by alignment"
+      ],
+      [
+        true,
+        "Cross-taxa hit table grouped by query"
+      ],
+      [
+        true,
+        "Hub with queries, symlinks and documents created"
+      ],
+      [
+        true,
+        "314 GB of rebuildable 2-kb temporaries removed and verified"
       ],
       [
         false,
-        "Remaining folders: audit and reorganisation (details kept private)"
+        "Remove BWA indexes, duplicate genomes and orthology banks (script ready, owner runs)"
+      ],
+      [
+        false,
+        "Pack small-file swarms into one tarball per run"
+      ],
+      [
+        false,
+        "Re-run lfsine.cons with identical thresholds in coelacanth, lungfishes and birds"
+      ],
+      [
+        false,
+        "Read the run contents still unread (Geotrypetes, axolotl, Pelobates, badLF, bird window consensi, sturgeon blocks)"
+      ],
+      [
+        false,
+        "Per-position profiles and consensus per taxon to compare subfamilies"
       ]
     ],
     "commands": [
-      "sear2kloop LFSINE-rb.q GCA_030020295.1_rGavGan2.hap2_genomic.fna   # also lfsine.q, lfsine_mid.q; same for GCF_030867095.1_rAllMis1_genomic.fna",
-      "SubFam GCA_030020295.1_rGavGan2.hap2_genomic-lfsine.bnk ; maft ...clw   # cluster hits into groups",
-      "seqkit grep -n -r -p \"Croc|Allig\" RepBase.bnk > croc ; seqkit grep -n -r -p SINE croc > crocSINE.repbase"
+      "sear2kloop <query> <genome> [coverage] [score]   # 2024 search; sear2k = rewritten version used in 2025 with thresholds 0 0",
+      "seqkit sliding -s 20 -W 60 -g lfsine.cons | seqkit split -s 1   # 21 windows of 60 bp, each searched in a genome",
+      "lfsine_mining.sh: merge hits (bedtools merge -s -d 500), ssearch36 -g -3 against lfsine.cons, jvarkit biostar139647 to SAM, samtools mpileup -> per-position profile and out.cons",
+      "SINE_orth_loc.bash nfo.bnk lat.bnk LFSINE.q   # orthologous-locus run, lungfish against coelacanth"
     ],
     "log": [
       [
         "2026-10-05",
-        "Folder renamed Crocodilia_LFSINE_2024, rm/ (2.3 GB failed RepeatModeler) deleted, results grouped; project index started (private)."
+        "Hub built; step 1 cleanup done (314.4 GB); step 2 scripts prepared; two public genomes re-downloading; this card written."
       ],
       [
         "2026-10-05",
-        "Folder audited and described."
+        "Audit of the remaining folders, corrections to earlier statements, orthology loci opened, bird windows and amphibians counted."
       ],
       [
-        "2024-07-19",
-        "LF-SINE searches in gharial and alligator, 34 hit clusters."
+        "2026-10-05",
+        "Query lineage traced (SINEbase LF to lfsine.cons); fish.q traced to the sturgeon folder; chim.q and fish.q aligned to lfsine.cons."
       ],
       [
-        "2024-01-04",
-        "Repbase crocodilian SINEs searched in the gharial genome."
+        "2025-03-13",
+        "Last bird window consensus (Emu/combine)."
+      ],
+      [
+        "2025-02-07",
+        "Sturgeon fish.q created; all.cons of seven queries."
+      ],
+      [
+        "2025-01-30",
+        "chim.q built in Callorhinchus; window and mining pipeline run in sharks, rays, chimaeras."
+      ],
+      [
+        "2024-12-16",
+        "lfsine.cons built from RepeatMasker LFSINE copies of human T2T."
+      ],
+      [
+        "2024-08-02",
+        "Lungfish against coelacanth orthologous-locus run; LFSINE.q."
+      ],
+      [
+        "2024-07-18",
+        "lfsine.q created from emu hits of SINEbase LF; searches in birds, gharial, alligator."
       ]
     ]
   }

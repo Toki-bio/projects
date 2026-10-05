@@ -32,11 +32,23 @@ h2 { color: #333; margin: 28px 0 14px; }
 .log .d { font-weight: 600; color: #333; margin-right: 8px; }
 p.about { line-height: 1.6; max-width: 900px; }
 pre { background: #f3f3f3; border: 1px solid #ddd; border-radius: 6px; padding: 12px; overflow-x: auto; font-size: .85em; line-height: 1.5; white-space: pre-wrap; }
+.sec { margin-top: 8px; }
+.sec p { line-height: 1.6; max-width: 1000px; margin: 8px 0; }
+.sec ul { margin: 8px 0 8px 22px; line-height: 1.6; max-width: 1000px; }
+table.tbl { border-collapse: collapse; margin: 12px 0 18px; font-size: .9em; width: 100%; max-width: 1100px; }
+table.tbl th { background: #333; color: white; text-align: left; padding: 7px 10px; }
+table.tbl td { padding: 6px 10px; border-bottom: 1px solid #e3e3e3; vertical-align: top; }
+table.tbl tr:nth-child(even) td { background: #f7f7f7; }
+.note { background: #fff8e1; border-left: 4px solid #e0a800; padding: 10px 14px; margin: 12px 0; max-width: 1000px; line-height: 1.5; }
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
+.toc a { font-size: .85em; background: #eee; color: #444; border-radius: 12px; padding: 3px 12px; text-decoration: none; }
+.toc a:hover { background: #333; color: white; }
+.badge { display: inline-block; border-radius: 10px; padding: 2px 10px; font-size: .8em; font-weight: 600; background: #b71c1c; color: white; margin-left: 6px; }
 .foot { text-align: center; color: #999; font-size: .85em; padding: 20px; }
 </style></head><body>
 <div class="container"><div class="header"><h1>Sicista betulina genome</h1><p>ONT assembly of the northern birch mouse (primary: 2.99 Gb, N50 18.25 Mb, BUSCO 99.2%), plus mitogenome/NUMT findings and a first SINE scan.</p></div>
 <div class="content"><a class="back" href="../index.html">&larr; All projects</a>
-<p><span class="status s-active">active</span> <span class="meta">updated 2026-10-04</span></p>
+<p><span class="status s-active">active</span> <span class="meta">updated 2026-10-04</span></p><div class="toc"></div>
 <h2>About</h2><p class="about">Assembly of S. betulina (individual ZBS2026-Sb1, Bannikova lab ONT, about 104 Gb) on therioserver. Collaborators: Kim Cooper (UCSD), Michael Hiller (Senckenberg, will run TOGA2), Anna Bannikova, Vladimir Lebedev. Side questions: whether extra Illumina is needed, and why PCR fails (a ~200-copy nuclear lineage-B mtDNA-like family was found).</p>
 <h2>Plan</h2><ul class="plan"><li class="done">&#9745; Evaluate the primary assembly (earlier numbers were hap1) and recommend it</li><li class="done">&#9745; Share primary assembly and raw reads with the Hiller lab</li><li class="done">&#9745; QC verdict: no extra Illumina needed on this individual (male, 35x ONT)</li><li class="done">&#9745; Mitogenome / NUMT analysis</li><li class="">&#9744; Check the lab&#x27;s actual PCR primers against the lineage-B family and the control-region repeat</li><li class="">&#9744; Finish de novo SINE scan, Dip SINEderella, and orthologous loci vs S. trizona</li><li class="">&#9744; More individuals for MSMC and population SINE frequencies</li><li class="">&#9744; Request pod5 and metadata from the sequencing company</li></ul>
 <h2>Where things are</h2><ul class="where"><li>Server: therioserver ~/Sicista2026</li><li>Notes: C:\work\hylomys_ont\SICISTA_WORKFLOW_LOG.md (section 11 first), SICISTA_MITO_FINDINGS.md, SICISTA_ASSEMBLY_QC_AND_ILLUMINA.md</li><li>Gene BEDs and SINE cards: C:\work\Tal\sicista</li></ul>

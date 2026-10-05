@@ -32,13 +32,25 @@ h2 { color: #333; margin: 28px 0 14px; }
 .log .d { font-weight: 600; color: #333; margin-right: 8px; }
 p.about { line-height: 1.6; max-width: 900px; }
 pre { background: #f3f3f3; border: 1px solid #ddd; border-radius: 6px; padding: 12px; overflow-x: auto; font-size: .85em; line-height: 1.5; white-space: pre-wrap; }
+.sec { margin-top: 8px; }
+.sec p { line-height: 1.6; max-width: 1000px; margin: 8px 0; }
+.sec ul { margin: 8px 0 8px 22px; line-height: 1.6; max-width: 1000px; }
+table.tbl { border-collapse: collapse; margin: 12px 0 18px; font-size: .9em; width: 100%; max-width: 1100px; }
+table.tbl th { background: #333; color: white; text-align: left; padding: 7px 10px; }
+table.tbl td { padding: 6px 10px; border-bottom: 1px solid #e3e3e3; vertical-align: top; }
+table.tbl tr:nth-child(even) td { background: #f7f7f7; }
+.note { background: #fff8e1; border-left: 4px solid #e0a800; padding: 10px 14px; margin: 12px 0; max-width: 1000px; line-height: 1.5; }
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
+.toc a { font-size: .85em; background: #eee; color: #444; border-radius: 12px; padding: 3px 12px; text-decoration: none; }
+.toc a:hover { background: #333; color: white; }
+.badge { display: inline-block; border-radius: 10px; padding: 2px 10px; font-size: .8em; font-weight: 600; background: #b71c1c; color: white; margin-left: 6px; }
 .foot { text-align: center; color: #999; font-size: .85em; padding: 20px; }
 </style></head><body>
 <div class="container"><div class="header"><h1>Projects</h1><p>What I am working on, where it stands, and what is next</p></div>
-<div class="content"><div class="filters"><button class="active" data-f="all">All</button><button data-f="active">active</button><button data-f="waiting">waiting</button><button data-f="parked">parked</button></div><div class="grid"><a class="card" href="p/gavgan-lfsine.html" data-status="active">
-<h3>LF-SINE project: crocodilians (first folder)</h3><p>Repbase crocodilian SINEs and three LF-SINE queries searched in the gharial and the American alligator genomes; crocodilian arm of the LF-SINE-in-birds work.</p><div><span class="tag">LF-SINE</span><span class="tag">SINEs</span><span class="tag">crocodilians</span><span class="tag">KIT</span></div>
+<div class="content"><div class="filters"><button class="active" data-f="all">All</button><button data-f="active">active</button><button data-f="waiting">waiting</button><button data-f="parked">parked</button></div><div class="grid"><a class="card" href="p/lfsine.html" data-status="active">
+<h3>LF-SINE project<span class="badge">high priority</span></h3><p>Distribution and evolution of the LF-SINE family across vertebrates: coelacanth, lungfishes, cartilaginous and ray-finned fishes, amphibians, birds, crocodilians and human. Audit of about 1 TB of runs on KIT, query lineage reconstructed, hub and cleanup in progress.</p><div><span class="tag">LF-SINE</span><span class="tag">SINEs</span><span class="tag">vertebrates</span><span class="tag">coelacanth</span><span class="tag">lungfish</span><span class="tag">sharks</span><span class="tag">KIT</span></div>
 <div class="bar"><div style="width:50%"></div></div>
-<div class="meta"><span class="status s-active">active</span><span>1/2 steps · updated 2026-10-05</span></div></a><a class="card" href="p/alsu.html" data-status="active">
+<div class="meta"><span class="status s-active">active</span><span>5/10 steps · updated 2026-10-05</span></div></a><a class="card" href="p/alsu.html" data-status="active">
 <h3>ALSU Uzbek population genetics</h3><p>Array and imputed genotypes of ~1,256 Uzbek individuals: PCA, ADMIXTURE, FST, relatedness, GWAS. Currently being re-checked against a corrected reference.</p><div><span class="tag">population genetics</span><span class="tag">DRAGEN</span></div>
 <div class="bar"><div style="width:50%"></div></div>
 <div class="meta"><span class="status s-active">active</span><span>4/8 steps · updated 2026-10-04</span></div></a><a class="card" href="p/viewalign.html" data-status="active">

@@ -32,11 +32,23 @@ h2 { color: #333; margin: 28px 0 14px; }
 .log .d { font-weight: 600; color: #333; margin-right: 8px; }
 p.about { line-height: 1.6; max-width: 900px; }
 pre { background: #f3f3f3; border: 1px solid #ddd; border-radius: 6px; padding: 12px; overflow-x: auto; font-size: .85em; line-height: 1.5; white-space: pre-wrap; }
+.sec { margin-top: 8px; }
+.sec p { line-height: 1.6; max-width: 1000px; margin: 8px 0; }
+.sec ul { margin: 8px 0 8px 22px; line-height: 1.6; max-width: 1000px; }
+table.tbl { border-collapse: collapse; margin: 12px 0 18px; font-size: .9em; width: 100%; max-width: 1100px; }
+table.tbl th { background: #333; color: white; text-align: left; padding: 7px 10px; }
+table.tbl td { padding: 6px 10px; border-bottom: 1px solid #e3e3e3; vertical-align: top; }
+table.tbl tr:nth-child(even) td { background: #f7f7f7; }
+.note { background: #fff8e1; border-left: 4px solid #e0a800; padding: 10px 14px; margin: 12px 0; max-width: 1000px; line-height: 1.5; }
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
+.toc a { font-size: .85em; background: #eee; color: #444; border-radius: 12px; padding: 3px 12px; text-decoration: none; }
+.toc a:hover { background: #333; color: white; }
+.badge { display: inline-block; border-radius: 10px; padding: 2px 10px; font-size: .8em; font-weight: 600; background: #b71c1c; color: white; margin-left: 6px; }
 .foot { text-align: center; color: #999; font-size: .85em; padding: 20px; }
 </style></head><body>
 <div class="container"><div class="header"><h1>ViewAlign (MSA viewer)</h1><p>Browser-based multiple sequence alignment viewer being prepared as a Bioinformatics application note. Now at v233 with a codon aligner and a BED annotation track.</p></div>
 <div class="content"><a class="back" href="../index.html">&larr; All projects</a>
-<p><span class="status s-active">active</span> <span class="meta">updated 2026-10-04</span></p>
+<p><span class="status s-active">active</span> <span class="meta">updated 2026-10-04</span></p><div class="toc"></div>
 <h2>About</h2><p class="about">ViewAlign is a single-page MSA viewer and editor. Plan: bioRxiv preprint first, then Bioinformatics (OUP), which accepts direct bioRxiv transfer. Main branch is the submission snapshot; a parked branch holds unfinished Show 2D work.</p>
 <h2>Plan</h2><ul class="plan"><li class="done">&#9745; MACSE-like frameshift-aware codon aligner on main (98.9% pair agreement on 2,636 genes)</li><li class="done">&#9745; Thorough review of v227: seven bugs fixed in v228</li><li class="done">&#9745; BED annotation track and per-gene codon analysis (v233, v234)</li><li class="">&#9744; Corresponding author and e-mail, funding statement</li><li class="">&#9744; Frozen release plus Zenodo DOI</li><li class="">&#9744; One main figure; trim manuscript to about 2,000 words</li><li class="">&#9744; Post to bioRxiv, then submit to Bioinformatics</li></ul>
 <h2>Where things are</h2><ul class="where"><li>Repo: C:\work\MSA-viewer (github.com/Toki-bio/MSA-viewer), GitHub Pages from main</li><li>Manuscript: manuscript.md, supplementary.md, cover-letter.md in the repo</li><li>Tests: tests/run-regression.sh and node tests/functional/run-all.js</li></ul>

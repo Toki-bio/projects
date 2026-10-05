@@ -1,13 +1,13 @@
 """Build index.html and p/<slug>.html from data/projects.json.
 Edit the JSON (add log entries at the top, tick plan items), run `python build.py`, commit, push."""
-import json, html, pathlib
+import json, html, pathlib, re
 
 root = pathlib.Path(__file__).parent
 data = json.loads((root / "data/projects.json").read_text(encoding="utf-8"))
 E = html.escape
 ORDER = {"active": 0, "waiting": 1, "parked": 2, "done": 3}
 data.sort(key=lambda p: p["updated"], reverse=True)
-data.sort(key=lambda p: ORDER.get(p["status"], 9))
+data.sort(key=lambda p: (ORDER.get(p["status"], 9), 0 if p.get('priority') == 'high' else 1))
 
 CSS = """
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -41,12 +41,45 @@ h2 { color: #333; margin: 28px 0 14px; }
 .log .d { font-weight: 600; color: #333; margin-right: 8px; }
 p.about { line-height: 1.6; max-width: 900px; }
 pre { background: #f3f3f3; border: 1px solid #ddd; border-radius: 6px; padding: 12px; overflow-x: auto; font-size: .85em; line-height: 1.5; white-space: pre-wrap; }
+.sec { margin-top: 8px; }
+.sec p { line-height: 1.6; max-width: 1000px; margin: 8px 0; }
+.sec ul { margin: 8px 0 8px 22px; line-height: 1.6; max-width: 1000px; }
+table.tbl { border-collapse: collapse; margin: 12px 0 18px; font-size: .9em; width: 100%; max-width: 1100px; }
+table.tbl th { background: #333; color: white; text-align: left; padding: 7px 10px; }
+table.tbl td { padding: 6px 10px; border-bottom: 1px solid #e3e3e3; vertical-align: top; }
+table.tbl tr:nth-child(even) td { background: #f7f7f7; }
+.note { background: #fff8e1; border-left: 4px solid #e0a800; padding: 10px 14px; margin: 12px 0; max-width: 1000px; line-height: 1.5; }
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; }
+.toc a { font-size: .85em; background: #eee; color: #444; border-radius: 12px; padding: 3px 12px; text-decoration: none; }
+.toc a:hover { background: #333; color: white; }
+.badge { display: inline-block; border-radius: 10px; padding: 2px 10px; font-size: .8em; font-weight: 600; background: #b71c1c; color: white; margin-left: 6px; }
 .foot { text-align: center; color: #999; font-size: .85em; padding: 20px; }
 """
 
 
 def prog(p):
     return sum(1 for s in p["plan"] if s[0]), len(p["plan"])
+
+
+def render_sections(secs):
+    out = []; toc = []
+    for i, sec in enumerate(secs):
+        sid = f"s{i}"
+        toc.append(f'<a href="#{sid}">{E(sec["heading"])}</a>')
+        h = [f'<div class="sec" id="{sid}"><h2>{E(sec["heading"])}</h2>']
+        for para in sec.get("text", []):
+            h.append(f"<p>{E(para)}</p>")
+        if sec.get("bullets"):
+            h.append("<ul>" + "".join(f"<li>{E(b)}</li>" for b in sec["bullets"]) + "</ul>")
+        if sec.get("table"):
+            t = sec["table"]
+            h.append('<table class="tbl"><tr>' + "".join(f"<th>{E(c)}</th>" for c in t["head"]) + "</tr>"
+                     + "".join("<tr>" + "".join((f'<td style="white-space:nowrap">{E(str(c))}</td>' if re.fullmatch(r"\d{4}-\d{2}-\d{2}|[\d,]+ nt|[\d,]+", str(c)) else f"<td>{E(str(c))}</td>") for c in row) + "</tr>" for row in t["rows"]) + "</table>")
+        if sec.get("note"):
+            h.append(f'<div class="note">{E(sec["note"])}</div>')
+        h.append("</div>")
+        out.append("".join(h))
+    return '<div class="toc">' + "".join(toc) + "</div>", "".join(out)
 
 
 def page(title, sub, body, extra=""):
@@ -62,7 +95,7 @@ for p in data:
     d, n = prog(p)
     tags = "".join(f'<span class="tag">{E(t)}</span>' for t in p["tags"])
     cards.append(f'''<a class="card" href="p/{p["slug"]}.html" data-status="{p["status"]}">
-<h3>{E(p["title"])}</h3><p>{E(p["summary"])}</p><div>{tags}</div>
+<h3>{E(p["title"])}{'<span class="badge">high priority</span>' if p.get('priority') == 'high' else ''}</h3><p>{E(p["summary"])}</p><div>{tags}</div>
 <div class="bar"><div style="width:{100 * d // n}%"></div></div>
 <div class="meta"><span class="status s-{p["status"]}">{p["status"]}</span><span>{d}/{n} steps · updated {p["updated"]}</span></div></a>''')
 
@@ -84,9 +117,11 @@ for p in data:
     where = "".join(f"<li>{E(w)}</li>" for w in p["where"])
     log = "".join(f'<div class="e"><span class="d">{E(d)}</span>{E(t)}</div>' for d, t in p["log"])
     cmds = ('<h2>Commands</h2><pre>' + E(chr(10).join(p['commands'])) + '</pre>') if p.get('commands') else ''
+    toc, secs = render_sections(p.get('sections', []))
+    badge = '<span class="badge">high priority</span>' if p.get('priority') == 'high' else ''
     body = f'''<a class="back" href="../index.html">&larr; All projects</a>
-<p><span class="status s-{p["status"]}">{p["status"]}</span> <span class="meta">updated {p["updated"]}</span></p>
-<h2>About</h2><p class="about">{E(p["about"])}</p>
+<p><span class="status s-{p["status"]}">{p["status"]}</span>{badge} <span class="meta">updated {p["updated"]}</span></p>{toc}
+<h2>About</h2><p class="about">{E(p["about"])}</p>{secs}
 <h2>Plan</h2><ul class="plan">{plan}</ul>
 <h2>Where things are</h2><ul class="where">{where}</ul>
 {cmds}<h2>Log</h2><div class="log">{log}</div>'''
