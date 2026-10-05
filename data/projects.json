@@ -404,8 +404,9 @@
     "summary": "Distribution and evolution of the LF-SINE family across vertebrates: coelacanth, lungfishes, cartilaginous and ray-finned fishes, amphibians, birds, crocodilians and human. Audit of about 1 TB of runs on KIT, query lineage reconstructed, hub and cleanup in progress.",
     "about": "LF-SINE (SINEbase entry LF, Bejerano 2006; Repbase LFSINE_Vert from Latimeria) was searched with a series of consensus queries in several dozen vertebrate and invertebrate genomes between July 2024 and March 2025. This card collects what the files on KIT show: where each query came from, how many hits each genome gives with the same query, what the orthology runs found, which earlier statements had to be corrected, and where the data are. Counts are lines of search hit files, not curated copy numbers; only counts made with the same query and thresholds are comparable.",
     "where": [
-      "KIT hub: /data/W/toki/LFSINE/ (queries, symlinks to every folder, summary, notes). Masters of the documents on the owner's PC: C:\\work\\LFSINE_PROJECT.md, LFSINE_SUMMARY_TABLE.md, LFSINE_REORGANIZATION_PROPOSAL.md",
-      "Main data folders on KIT: moa/unp (birds, coelacanth), Genomes/Fish/{Lungfish,Teleostomi}, Genomes/lower/{Chondrichthyes,Styelidae,Lanceolates,Nematostella}, Genomes/Amphibia, Genomes/Aves, Genomes/Reptiles/Crocodilia, hsa, Crocodilia_LFSINE_2024",
+      "KIT /data/W/toki/LFSINE/ holds all LF-SINE analysis data: one folder per group (birds, coelacanth, lungfish, ray-finned, chondrichthyes, amphibians, crocodilians, humans, invertebrates, mammals) and per species, with runs/ subfolders; queries/, summary/, notes/, hits/ (links by query), orthology/. README.md inside explains it.",
+      "Genomes live in /data/W/toki/Genomes/<taxon>/<species>/ (archives, uncompressed banks, indexes); each LFSINE species folder has a 'genome' link to its Genomes folder.",
+      "Masters of the documents on the owner's PC: C:\\work\\LFSINE_PROJECT.md (audit; paths there are the pre-reorganisation ones), LFSINE_SUMMARY_TABLE.md. Old -> new map: LFSINE/notes/logs/moved_map.tsv",
       "Not part of the project although the names match: Lagomorpha, Squamata, Tal/orth, GekkoSINE (their *.lfSINE files are SINE_orth_loc flank classes)"
     ],
     "sections": [
@@ -606,10 +607,10 @@
         ]
       },
       {
-        "heading": "Data, hub and cleanup status",
+        "heading": "Data layout and cleanup status",
         "text": [
-          "About 1.0 TB in the LF-SINE trees of KIT /data/W (results 308 GB in 1.33 M files; rebuildable 2-kb window temporaries, BWA indexes and uncompressed genome copies about 0.7-0.8 TB; genome archives 88 GB, kept).",
-          "Hub /data/W/toki/LFSINE/ created: 20 query copies with md5, 56 symlinks to the real folders, orthology and tool links, summary and notes. Nothing was moved."
+          "About 1.0 TB in the LF-SINE trees of KIT /data/W before the reorganisation: results 308 GB in 1.33 M files, rebuildable window temporaries, indexes and uncompressed genome copies about 0.7-0.8 TB, genome archives 88 GB (kept).",
+          "On 2026-10-05 the data were physically reorganised: genomes (105 files, 328 GB) moved to Genomes/<taxon>/<species>/, 28 analysis folders and 572 sub-items moved or renamed into LFSINE/<group>/<species>/ with no dates or project names in folder names; compatibility links at the old places were removed on purpose; every move is logged old -> new."
         ],
         "table": {
           "head": [
@@ -619,11 +620,11 @@
           "rows": [
             [
               "2-kb window temporaries (249 files, 314.4 GB)",
-              "removed by the owner; hit files, links and counts verified afterwards; /data/W free space 509 GB to 801 GB"
+              "removed by the owner; hit files and counts verified afterwards; /data/W free space 509 GB to 801 GB"
             ],
             [
-              "BWA indexes (13 files, 72.6 GB), verified duplicate genomes, lungfish banks, orthology banks (nfo-lat.bnk and two la2-lat.bnk, exact concatenations, 49.5 GB)",
-              "script ready with dry-run, verify and delete modes; waits for the owner"
+              "Rebuildable genome copies (orthology banks 49.5 GB, BWA indexes, uncompressed genomes next to their .gz)",
+              "script ready (dry-run, verify, yes); runs after the Lissotriton and Bombina downloads finish"
             ],
             [
               "Lissotriton and Bombina public genomes",
