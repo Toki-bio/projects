@@ -1,0 +1,8 @@
+track name="KIV-3 junction stretch (Chin type I coordinates)"
+Chin2022_typeI	354	536	exon2_182bp_previous_kringle	0	+	0	0	31,119,180
+Chin2022_typeI	536	1743	interkringle_intron	0	+	0	0	180,180,180
+Chin2022_typeI	647	1784	B-specific_stretch(107_fixed_sites)	0	+	0	0	214,39,40
+Chin2022_typeI	1743	1903	exon1_160bp_(KIV-3_in_junction_rows)	0	+	0	0	31,119,180
+Chin2022_typeI	1756	1757	site_14	0	+	0	0	160,82,122
+Chin2022_typeI	1783	1784	site_41	0	+	0	0	160,82,122
+Chin2022_typeI	1828	1829	site_86_(B_vs_C)	0	+	0	0	160,82,122
