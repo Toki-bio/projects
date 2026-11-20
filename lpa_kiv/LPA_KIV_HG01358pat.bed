@@ -1,0 +1,22 @@
+track name="HG01358pat KIV units"
+KIV2_01_tA	0	160	exonA_160bp(Ensembl_ex4_of_KIV2-1)	0	+	0	0	31,119,180
+KIV2_01_tA	160	4154	intron_~4kb	0	+	0	0	180,180,180
+KIV2_01_tA	4154	4336	exonB_182bp(Ensembl_ex5)	0	+	0	0	31,119,180
+KIV2_01_tA	4336	5543	intron_~1.2kb_to_next_unit	0	+	0	0	180,180,180
+KIV2_01_tA	487	493	EcoRI_GAATTC	0	+	0	0	214,39,40
+KIV2_01_tA	4227	4247	Lanktree_tube_ex4_F	0	+	0	0	44,160,44
+KIV2_01_tA	4267	4285	Lanktree_tube_ex4_R	0	+	0	0	44,160,44
+KIV2_01_tA	4247	4263	Lanktree_tube_ex4_P	0	+	0	0	255,127,14
+KIV2_01_tA	4227	4285	Lanktree_tube_ex4_amplicon_58bp	0	+	0	0	148,103,189
+KIV2_01_tA	63	84	Lanktree_tube_ex5_F	0	+	0	0	44,160,44
+KIV2_01_tA	107	129	Lanktree_tube_ex5_R	0	+	0	0	44,160,44
+KIV2_01_tA	86	102	Lanktree_tube_ex5_P	0	+	0	0	255,127,14
+KIV2_01_tA	63	129	Lanktree_tube_ex5_amplicon_66bp	0	+	0	0	148,103,189
+KIV2_01_tA	4191	4215	Innsbruck_ddPCR_F	0	+	0	0	44,160,44
+KIV2_01_tA	4267	4285	Innsbruck_ddPCR_R	0	+	0	0	44,160,44
+KIV2_01_tA	4239	4266	Innsbruck_ddPCR_P	0	+	0	0	255,127,14
+KIV2_01_tA	4191	4285	Innsbruck_ddPCR_amplicon_94bp	0	+	0	0	148,103,189
+KIV2_01_tA	351	372	A2_design_F	0	+	0	0	44,160,44
+KIV2_01_tA	456	477	A2_design_R	0	+	0	0	44,160,44
+KIV2_01_tA	422	450	A2_design_P	0	+	0	0	255,127,14
+KIV2_01_tA	351	477	A2_design_amplicon_126bp	0	+	0	0	148,103,189
