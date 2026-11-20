@@ -1,0 +1,27 @@
+track name="KIV-2 features (Coassin 2019 PCR5104 numbering)"
+PCR5104_Coassin2019_ref	580	740	exon421_160bp(KIV-2_exon1)	0	+	0	0	31,119,180
+PCR5104_Coassin2019_ref	4743	4925	exon422_182bp(KIV-2_exon2)	0	+	0	0	31,119,180
+PCR5104_Coassin2019_ref	740	4743	intron_~4kb	0	+	0	0	180,180,180
+PCR5104_Coassin2019_ref	593	594	subtype_site_14_A>G	0	+	0	0	160,82,122
+PCR5104_Coassin2019_ref	620	621	subtype_site_41_T>C	0	+	0	0	160,82,122
+PCR5104_Coassin2019_ref	665	666	subtype_site_86_A>T	0	+	0	0	160,82,122
+PCR5104_Coassin2019_ref	639	642	R21X=p.(Arg20Ter)_codon_CGA>TGA_pos640	0	+	0	0	214,39,40
+PCR5104_Coassin2019_ref	4732	4733	4733G>A_(11bp_before_exon422)	0	+	0	0	214,39,40
+PCR5104_Coassin2019_ref	4924	4925	4925G>A_(last_base_exon422)	0	+	0	0	214,39,40
+PCR5104_Coassin2019_ref	1067	1073	EcoRI	0	+	0	0	214,39,40
+PCR5104_Coassin2019_ref	4816	4836	Lanktree_tube_ex4_F	0	+	0	0	44,160,44
+PCR5104_Coassin2019_ref	4856	4874	Lanktree_tube_ex4_R	0	+	0	0	44,160,44
+PCR5104_Coassin2019_ref	4836	4852	Lanktree_tube_ex4_P	0	+	0	0	255,127,14
+PCR5104_Coassin2019_ref	4816	4874	Lanktree_tube_ex4_amplicon_58bp	0	+	0	0	148,103,189
+PCR5104_Coassin2019_ref	643	664	Lanktree_tube_ex5_F	0	+	0	0	44,160,44
+PCR5104_Coassin2019_ref	687	709	Lanktree_tube_ex5_R	0	+	0	0	44,160,44
+PCR5104_Coassin2019_ref	666	682	Lanktree_tube_ex5_P	0	+	0	0	255,127,14
+PCR5104_Coassin2019_ref	643	709	Lanktree_tube_ex5_amplicon_66bp	0	+	0	0	148,103,189
+PCR5104_Coassin2019_ref	4780	4804	Innsbruck_ddPCR_F	0	+	0	0	44,160,44
+PCR5104_Coassin2019_ref	4856	4874	Innsbruck_ddPCR_R	0	+	0	0	44,160,44
+PCR5104_Coassin2019_ref	4828	4855	Innsbruck_ddPCR_P	0	+	0	0	255,127,14
+PCR5104_Coassin2019_ref	4780	4874	Innsbruck_ddPCR_amplicon_94bp	0	+	0	0	148,103,189
+PCR5104_Coassin2019_ref	931	952	A2_design_F	0	+	0	0	44,160,44
+PCR5104_Coassin2019_ref	1036	1057	A2_design_R	0	+	0	0	44,160,44
+PCR5104_Coassin2019_ref	1002	1030	A2_design_P	0	+	0	0	255,127,14
+PCR5104_Coassin2019_ref	931	1057	A2_design_amplicon_126bp	0	+	0	0	148,103,189
