@@ -21,8 +21,8 @@ https://toki-bio.github.io/MSA-viewer/?url=https%3A%2F%2Fraw.githubusercontent.c
 Files
 - `rsi_MEG-T2_cut_aln.fa` — 96 rows, 638 columns. Row 1 is the consensus rebuilt from these 94
   copies, row 2 the MEG-T2 bank consensus (232 bp); then the 10 copies the new code **keeps** and
-  the 84 it **drops**. Row name: group, distance from the 75.8-bit cut, new-scale bit score, locus,
-  and `rc` where MAFFT reverse-complemented the row. Element uppercase, flanks lowercase.
+  the 84 it **drops**. Row name begins with `drop` / `KEPT` and the signed distance from the 75.8-bit cut, then the
+  new-scale bit score, the locus, and `rc` where MAFFT reverse-complemented the row. Element uppercase, flanks lowercase.
 - `scores.tsv` — locus, group, new-scale bits, distance from the cut, old-scale bits.
 
 Scores (the two scales are **not** comparable: `-z 3` runs about 2.1-2.3x the fitted `-z 11` values)
