@@ -1,0 +1,120 @@
+alignment columns (gap-only removed): 6838
+A vs B consensus differing columns: 129 (first 1, last 6786)
+
+cons_KIV2_A_n72 ungapped 5548 bp; exon1 (1743, 1903, 0, '+'); exon2 (354, 536, 0, '+')
+  site 14 = A
+  site 41 = T
+  site 86 = A
+  Lanktree_ex4_F       mm 0 at 427 +
+  Lanktree_ex4_probe   mm 0 at 447 +
+  Lanktree_ex4_R       mm 0 at 467 -
+  Lanktree_ex5_F       mm 0 at 1806 +
+  Lanktree_ex5_probe   mm 0 at 1829 -
+  Lanktree_ex5_R       mm 0 at 1850 -
+  Innsbruck_F          mm 0 at 391 +
+  Innsbruck_probe      mm 0 at 439 +
+  Kamstrup_F           mm 0 at 380 +
+  Kamstrup_probe       mm 0 at 444 +
+  Kamstrup_R           mm 0 at 468 -
+  A2_F                 mm 0 at 2094 +
+  A2_probe             mm 0 at 2165 +
+  A2_R                 mm 0 at 2199 -
+  AB_assay_F           mm 0 at 1644 +
+  AB_assay_R           mm 0 at 1732 -
+  AB_probe_A           mm 0 at 1688 +
+  AB_probe_B           no match <= 2 mismatches
+
+cons_KIV2_B_n23 ungapped 5547 bp; exon1 (1743, 1903, 3, '+'); exon2 (351, 533, 0, '+')
+  site 14 = G
+  site 41 = C
+  site 86 = T
+  Lanktree_ex4_F       mm 0 at 424 +
+  Lanktree_ex4_probe   mm 0 at 444 +
+  Lanktree_ex4_R       mm 0 at 464 -
+  Lanktree_ex5_F       mm 0 at 1806 +
+  Lanktree_ex5_probe   mm 0 at 1829 -
+  Lanktree_ex5_R       mm 0 at 1850 -
+  Innsbruck_F          mm 0 at 388 +
+  Innsbruck_probe      mm 0 at 436 +
+  Kamstrup_F           mm 0 at 377 +
+  Kamstrup_probe       mm 0 at 441 +
+  Kamstrup_R           mm 0 at 465 -
+  A2_F                 mm 0 at 2094 +
+  A2_probe             mm 0 at 2165 +
+  A2_R                 mm 0 at 2199 -
+  AB_assay_F           mm 0 at 1645 +
+  AB_assay_R           mm 0 at 1732 -
+  AB_probe_A           no match <= 2 mismatches
+  AB_probe_B           mm 0 at 1689 +
+
+cons_KIV2_C_n3 ungapped 5559 bp; exon1 (1743, 1903, 2, '+'); exon2 (351, 533, 0, '+')
+  site 14 = G
+  site 41 = C
+  site 86 = A
+  Lanktree_ex4_F       mm 0 at 424 +
+  Lanktree_ex4_probe   mm 0 at 444 +
+  Lanktree_ex4_R       mm 0 at 464 -
+  Lanktree_ex5_F       mm 0 at 1806 +
+  Lanktree_ex5_probe   mm 0 at 1829 -
+  Lanktree_ex5_R       mm 0 at 1850 -
+  Innsbruck_F          mm 0 at 388 +
+  Innsbruck_probe      mm 0 at 436 +
+  Kamstrup_F           mm 0 at 377 +
+  Kamstrup_probe       mm 0 at 441 +
+  Kamstrup_R           mm 0 at 465 -
+  A2_F                 mm 0 at 2094 +
+  A2_probe             mm 0 at 2165 +
+  A2_R                 mm 0 at 2199 -
+  AB_assay_F           mm 0 at 1645 +
+  AB_assay_R           mm 0 at 1732 -
+  AB_probe_A           no match <= 2 mismatches
+  AB_probe_B           mm 0 at 1689 +
+
+cons_KIV3_n7 ungapped 6516 bp; exon1 (1743, 1903, 3, '+'); exon2 (351, 533, 0, '+')
+  site 14 = G
+  site 41 = C
+  site 86 = T
+  Lanktree_ex4_F       mm 0 at 424 +
+  Lanktree_ex4_probe   mm 0 at 444 +
+  Lanktree_ex4_R       mm 0 at 464 -
+  Lanktree_ex5_F       mm 0 at 1806 +
+  Lanktree_ex5_probe   mm 0 at 1829 -
+  Lanktree_ex5_R       mm 0 at 1850 -
+  Innsbruck_F          mm 0 at 388 +
+  Innsbruck_probe      mm 0 at 436 +
+  Kamstrup_F           mm 0 at 377 +
+  Kamstrup_probe       mm 0 at 441 +
+  Kamstrup_R           mm 0 at 465 -
+  A2_F                 no match <= 2 mismatches
+  A2_probe             no match <= 2 mismatches
+  A2_R                 no match <= 2 mismatches
+  AB_assay_F           mm 0 at 1645 +
+  AB_assay_R           mm 0 at 1732 -
+  AB_probe_A           no match <= 2 mismatches
+  AB_probe_B           mm 0 at 1689 +
+
+cons_KIV1_n7 ungapped 5491 bp; exon1 None; exon2 None
+  Lanktree_ex4_F       no match <= 2 mismatches
+  Lanktree_ex4_probe   no match <= 2 mismatches
+  Lanktree_ex4_R       no match <= 2 mismatches
+  Lanktree_ex5_F       mm 1 at 1806 +
+  Lanktree_ex5_probe   mm 1 at 1829 -
+  Lanktree_ex5_R       no match <= 2 mismatches
+  Innsbruck_F          no match <= 2 mismatches
+  Innsbruck_probe      no match <= 2 mismatches
+  Kamstrup_F           no match <= 2 mismatches
+  Kamstrup_probe       no match <= 2 mismatches
+  Kamstrup_R           no match <= 2 mismatches
+  A2_F                 no match <= 2 mismatches
+  A2_probe             no match <= 2 mismatches
+  A2_R                 no match <= 2 mismatches
+  AB_assay_F           no match <= 2 mismatches
+  AB_assay_R           no match <= 2 mismatches
+  AB_probe_A           no match <= 2 mismatches
+  AB_probe_B           no match <= 2 mismatches
+
+KIV2_A vs KIV2_C differing columns: 132
+KIV2_B vs KIV2_C differing columns: 15
+KIV2_B vs KIV3 differing columns: 1394
+KIV2_A vs KIV3 differing columns: 1519
+KIV2_A vs KIV1 differing columns: 1889
