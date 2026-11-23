@@ -16,7 +16,3 @@ KIV2_01_tA	4191	4215	Innsbruck_ddPCR_F	0	+	0	0	44,160,44
 KIV2_01_tA	4267	4285	Innsbruck_ddPCR_R	0	+	0	0	44,160,44
 KIV2_01_tA	4239	4266	Innsbruck_ddPCR_P	0	+	0	0	255,127,14
 KIV2_01_tA	4191	4285	Innsbruck_ddPCR_amplicon_94bp	0	+	0	0	148,103,189
-KIV2_01_tA	351	372	A2_design_F	0	+	0	0	44,160,44
-KIV2_01_tA	456	477	A2_design_R	0	+	0	0	44,160,44
-KIV2_01_tA	422	450	A2_design_P	0	+	0	0	255,127,14
-KIV2_01_tA	351	477	A2_design_amplicon_126bp	0	+	0	0	148,103,189
